@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Mitr&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Mitr", sans-serif;
+  user-select: none;
+}
+
+.control {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  opacity: 0;
+}
+
+.control-left {
+  left: 0;
+}
+.control-right {
+  right: 0;
+}
+
+.alert {
+  opacity: 0;
+  visibility: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.6);
+  transition: 300ms;
+
+  h3 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+  }
+
+  button,
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    outline: none;
+    font-family: "Mitr", sans-serif;
+    margin-top: 1rem;
+    padding: 0.25rem 1rem;
+    border-radius: 1rem;
+  }
+
+  button {
+    animation: 1s scale infinite linear;
+  }
+
+  @keyframes scale {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1);
+    }
+    75% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+.alert-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.game {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background: url(../assets/img/background.png);
+  background-size: cover;
+  background-position: center bottom;
+
+  @media (min-width: 768px) {
+    width: 768px;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  .score {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #fff;
+  }
+
+  .game-area {
+    position: relative;
+    width: 300px;
+    height: 100%;
+    overflow: hidden;
+
+    div {
+      display: inline;
+    }
+
+    .main-insect {
+      position: absolute;
+      bottom: 3rem;
+      z-index: 10;
+      transition: 100ms;
+    }
+
+    .enemy-insect {
+      position: absolute;
+      animation: moving 2.5s infinite linear;
+    }
+
+    @keyframes moving {
+      from {
+        bottom: 120%;
+      }
+      to {
+        bottom: -20%;
+      }
+    }
+  }
+}

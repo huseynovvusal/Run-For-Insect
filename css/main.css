@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Mitr&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  font-family: "Mitr", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.control {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  opacity: 0;
+}
+
+.control-left {
+  left: 0;
+}
+
+.control-right {
+  right: 0;
+}
+
+.alert {
+  opacity: 0;
+  visibility: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 11;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.alert h3 {
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.alert button,
+.alert a {
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  outline: none;
+  font-family: "Mitr", sans-serif;
+  margin-top: 1rem;
+  padding: 0.25rem 1rem;
+  border-radius: 1rem;
+}
+
+.alert button {
+  -webkit-animation: 1s scale infinite linear;
+          animation: 1s scale infinite linear;
+}
+
+@-webkit-keyframes scale {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  75% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scale {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  75% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.alert-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.game {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  background: url(../assets/img/background.png);
+  background-size: cover;
+  background-position: center bottom;
+}
+
+@media (min-width: 768px) {
+  .game {
+    width: 768px;
+  }
+}
+
+@media (max-width: 768px) {
+  .game {
+    width: 100%;
+  }
+}
+
+.game .score {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #fff;
+}
+
+.game .game-area {
+  position: relative;
+  width: 300px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.game .game-area div {
+  display: inline;
+}
+
+.game .game-area .main-insect {
+  position: absolute;
+  bottom: 3rem;
+  z-index: 10;
+  -webkit-transition: 100ms;
+  transition: 100ms;
+}
+
+.game .game-area .enemy-insect {
+  position: absolute;
+  -webkit-animation: moving 2.5s infinite linear;
+          animation: moving 2.5s infinite linear;
+}
+
+@-webkit-keyframes moving {
+  from {
+    bottom: 120%;
+  }
+  to {
+    bottom: -20%;
+  }
+}
+
+@keyframes moving {
+  from {
+    bottom: 120%;
+  }
+  to {
+    bottom: -20%;
+  }
+}
+/*# sourceMappingURL=main.css.map */

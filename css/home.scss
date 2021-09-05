@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Mitr&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Mitr", sans-serif;
+  user-select: none;
+  background: url(../assets/img/background.png);
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.6);
+  height: 100vh;
+  width: 100vw;
+
+  h3 {
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  p {
+    color: #fff;
+    text-align: center;
+  }
+
+  img {
+    width: 70px;
+    animation: 2s moving infinite;
+  }
+  @keyframes moving {
+    0% {
+      transform: rotate(0) translateY(0);
+    }
+    25% {
+      transform: translateY(-15%);
+    }
+    50% {
+      transform: rotate(90deg);
+    }
+    75% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: rotate(0) translateY(0);
+    }
+  }
+
+  button,
+  a {
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    outline: none;
+    font-family: "Mitr", sans-serif;
+    margin-top: 1rem;
+    padding: 0.25rem 1rem;
+    border-radius: 1rem;
+    animation: 1s scale infinite linear;
+  }
+}
+
+.copyright {
+  color: #fff;
+  font-size: 0.75rem;
+  margin: 1rem;
+  text-align: center;
+  position: absolute;
+  bottom: 1rem;
+
+  a {
+    color: #fff;
+  }
+}
